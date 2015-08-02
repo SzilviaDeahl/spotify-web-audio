@@ -85,7 +85,8 @@ var blackAndWhite = function () {
     // var audio = new Audio();
     var audio = document.getElementById('player');
     audio.src = '../sample.mp3';
-    var context = new webkitAudioContext();
+    // audio.src = 'http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga';
+    var context = new AudioContext();
     var analyser = context.createAnalyser();
     var source = context.createMediaElementSource(audio);
     source.connect(analyser);
@@ -98,7 +99,7 @@ var blackAndWhite = function () {
 
       analyser.fftSize = 1024;
         var bufferLength = analyser.frequencyBinCount;
-        console.log(bufferLength);
+        // console.log(bufferLength);
         var dataArray = new Uint8Array(bufferLength);
 
         ctx.clearRect(0, 0, WIDTH, HEIGHT);
@@ -107,7 +108,7 @@ var blackAndWhite = function () {
           drawVisual = requestAnimationFrame(draw);
 
           analyser.getByteFrequencyData(dataArray);
-          console.log(dataArray);
+          // console.log(dataArray);
 
           ctx.fillStyle = 'rgb(0, 0, 0)';
           ctx.fillRect(0, 0, WIDTH, HEIGHT);

@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require('monk')(process.env.SPOTIFY_DB);
 var unirest = require('unirest');
 var fs = require('fs');
-
+//version that works with sound and visualizer, but can't call to spotify
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.redirect('/visualize');

@@ -13,14 +13,6 @@ router.get('/visualize', function (req, res, next) {
   res.render('show', {title: 'SONGZ YO'});
 });
 
-// router.get('/visualize/api/:albumId', function (req, res) {
-//     unirest.get('https://api.spotify.com/v1/albums/' + req.params.albumId)
-//     // .header("X-Mashape-Key", process.env.MASH_KEY)
-//     .end(function (result) {
-//       res.json(result);
-//   });
-// });
-
 router.get('/visualize/song/:songUrl', function (req, res) {
   unirest.get('https://p.scdn.co/mp3-preview/' + req.params.songUrl)
   .end(function (result) {

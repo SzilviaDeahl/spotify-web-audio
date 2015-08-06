@@ -66,13 +66,3 @@ searchButton.addEventListener('click', function () {
     });
   }
 });
-
-
-
-// GET https://api.spotify.com/v1/artists/{id}/albums
-
-// var xhr = new XMLHttpRequest();
-// xhr.open('GET', '/filter/' + className , false);
-// xhr.send(null);
-// var parsedObj = JSON.parse(xhr.responseText);
-// var parsedObj = parsedObj.body;
